@@ -149,17 +149,22 @@ const MentionInput: FC<MentionInputProps> = ({
         onChangeText={onChangeInput}
         onSelectionChange={handleSelectionChange}
       >
-        <Text style={textStyle}>
+        <Text>
           {parts.map(({ text, partType, data }, index) =>
             partType ? (
               <Text
                 key={`${index}-${data?.trigger ?? 'pattern'}`}
-                style={partType.textStyle ?? defaultMentionTextStyle}
+                style={[
+                  partType.textStyle ?? defaultMentionTextStyle,
+                  textStyle,
+                ]}
               >
                 {text}
               </Text>
             ) : (
-              <Text key={index}>{text}</Text>
+              <Text style={textStyle} key={index}>
+                {text}
+              </Text>
             )
           )}
         </Text>
