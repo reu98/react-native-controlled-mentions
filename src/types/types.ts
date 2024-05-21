@@ -1,6 +1,12 @@
 import type { Change } from 'diff';
 import type { ReactNode, Ref } from 'react';
-import type { StyleProp, TextInput, TextInputProps, TextStyle, ViewStyle } from 'react-native';
+import type {
+  StyleProp,
+  TextInput,
+  TextInputProps,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
 
 type Suggestion = {
   id: string;
@@ -100,6 +106,8 @@ type MentionInputProps = Omit<TextInputProps, 'onChange'> & {
   inputRef?: Ref<TextInput>;
 
   containerStyle?: StyleProp<ViewStyle>;
+
+  textStyle?: StyleProp<TextStyle>;
 };
 
 export type {
